@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import PlayersDisplay from "./Players-display";
 
 const DEFAULT_PLAYERS = [
     "Puvin",
@@ -12,7 +13,7 @@ export default function PlayerChooser() {
     useEffect(() => {
         setPlayers(DEFAULT_PLAYERS.map(player => ({
             name: player,
-            selected: false
+            selected: true
         })));
     }, []);
 
@@ -21,11 +22,18 @@ export default function PlayerChooser() {
     const [addPlayerError, setAddPlayerError] = useState("");
 
     return <div className="player-chooser">
-        <div className="player-adder-wrapper">
-            <label for="player-name">Player name:</label>
-            <input type="text" id="player-name" value={addPlayer}/>
+        <form className="player-add-wrapper" onSubmit={(e) => {
+            e.preventDefault();
+            setPlayers([{name: addPlayer, selected: true}, ...players])
+            setAddPlayer("");
+        }}>
+            <label htmlFor="player-name">Player name:</label>
+            <input autoComplete="off" type="text" id="player-name" value={addPlayer} onChange={(e) => {
+                setAddPlayer(e.currentTarget.value);
+            }}/>
             <button className="add-player">+</button>
-        </div>
+        </form>
+        <PlayersDisplay players={players}/>
     </div>
 }
 

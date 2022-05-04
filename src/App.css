@@ -3,11 +3,74 @@
     width: 100vw;
 }
 
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 22px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 :root {
     --background: #282828;
     --primary: #0d5e9f;
     --secondary: #808080;
-    --tertiary: rgb(32, 34, 37);
+    --tertiary: rgb(31, 31, 31);
     --quaternary: #292b2f;
     --quinary: #393d42;
     --senary: #828386;
@@ -32,3 +95,63 @@
     display: flex;
     align-items: center;
 }
+
+
+.player-chooser {
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-grow: 1;
+}
+
+.player-add-wrapper {
+    display: flex;
+    color: var(--primary-text);
+
+}
+
+.player-add-wrapper input[type="text"] {
+    flex-grow: 1;
+    outline: none;
+    background-color: var(--tertiary);
+    border: 1px solid var(--primary);
+    color: var(--primary-text);
+    padding: 0.3rem;
+    margin: 0 0.5rem;
+}
+
+.player-add-wrapper button {
+    color: var(--primary-text);
+    border: 1px solid var(--primary);
+    background-color: var(--tertiary);
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+
+}
+
+.players-display-wrapper {
+    margin: 0.75rem 0 1.5rem 0;
+    border: 1px solid var(--primary);
+    flex-grow: 1;
+}
+
+.player-display-wrapper {
+    color: var(--primary-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.player-display-wrapper:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+.player-name{
+    padding: 0.5rem;
+    flex-grow: 1;
+    margin: 0 0.5rem;
+}
+
+
