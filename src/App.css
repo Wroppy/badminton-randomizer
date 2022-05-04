@@ -1,6 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 #root {
-    height: 100vh;
-    width: 100vw;
 }
 
 /* The switch - the box around the slider */
@@ -127,13 +130,14 @@ input:checked + .slider:before {
     background-color: var(--tertiary);
     padding: 0.3rem 0.75rem;
     cursor: pointer;
-
+    user-select: none;
 }
 
 .players-display-wrapper {
-    margin: 0.75rem 0 1.5rem 0;
+    margin: 0.75rem 0 0 0;
     border: 1px solid var(--primary);
     flex-grow: 1;
+    overflow: auto;
 }
 
 .player-display-wrapper {
@@ -142,16 +146,33 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     padding-right: 1rem;
+    user-select: none;
 }
 
-.player-display-wrapper:hover{
+.player-display-wrapper:hover {
     background-color: rgba(0, 0, 0, 0.3);
-
 }
-.player-name{
+
+.player-name {
     padding: 0.5rem;
     flex-grow: 1;
     margin: 0 0.5rem;
+}
+
+.footer {
+    width: 80%;
+    margin: 1rem auto 2rem auto;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.footer button {
+    color: var(--primary-text);
+    border: 1px solid var(--primary);
+    background-color: var(--tertiary);
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    user-select: none;
 }
 
 

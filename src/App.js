@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Components/Header";
 import PlayerChooser from "./Components/Player-chooser";
+import Footer from "./Components/Footer";
 
 
 
@@ -9,6 +10,7 @@ function App() {
         <div className="App">
             <Header/>
             <PlayerChooser/>
+            <Footer/>
         </div>
     );
 }

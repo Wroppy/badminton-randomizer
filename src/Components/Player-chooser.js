@@ -31,12 +31,13 @@ export default function PlayerChooser() {
             setAddPlayer("");
         }}>
             <label htmlFor="player-name">Player name:</label>
-            <input autoComplete="off" type="text" id="player-name" value={addPlayer} onChange={(e) => {
+            <input placeholder="add player" autoComplete="off" type="text" id="player-name" value={addPlayer} onChange={(e) => {
                 setAddPlayer(e.currentTarget.value);
             }}/>
             <button className="add-player">+</button>
         </form>
         <PlayersDisplay players={players}/>
+
     </div>
 }
 
