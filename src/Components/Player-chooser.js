@@ -24,6 +24,9 @@ export default function PlayerChooser() {
     return <div className="player-chooser">
         <form className="player-add-wrapper" onSubmit={(e) => {
             e.preventDefault();
+            if (addPlayer.length === 0) {
+                return;
+            }
             setPlayers([{name: addPlayer, selected: true}, ...players])
             setAddPlayer("");
         }}>
