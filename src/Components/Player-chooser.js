@@ -48,7 +48,7 @@ export default function PlayerChooser() {
     }
 
     return <div className="player-chooser">
-        <div id="modal-box" className="modal" style={showModal ? {display: "block"} : {display: "none"}}>
+        <div id="modal-box" className="modal" style={showModal ? {display: "flex"} : {display: "none"}}>
             <div className="modal-content">
                 <div className="modal-header">
                     <span>
