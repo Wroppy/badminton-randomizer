@@ -2,22 +2,12 @@ import {useState, useEffect} from "react";
 import PlayersDisplay from "./Players-display";
 import Footer from "./Footer";
 
-// const DEFAULT_PLAYERS = [
-//     "Puvin",
-//     "Terry",
-//     "Weyman",
-//     "Tran",
-//     "Frank"
-// ]
-
 const DEFAULT_PLAYERS = [
-    "Alex",
-    "Dylan",
-    "Leon",
-    "Ollie",
-    "Sahaj",
-    "Viraj",
-    "Yeshan"
+    "Puvin",
+    "Terry",
+    "Weyman",
+    "Tran",
+    "Frank"
 ]
 
 export default function PlayerChooser() {
