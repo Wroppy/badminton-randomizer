@@ -7,8 +7,7 @@ export default function PlayersDisplay(props) {
                     <label className="player-name" htmlFor={`switch-${index}`}>
                         {player.name}
                     </label>
-                    <Switch id={`switch-${index}`} selected={player.selected}/>
-
+                    <Switch id={`switch-${index}`} index={index} players={props.players}/>
                 </div>
             })}
     </div>
